@@ -2,6 +2,11 @@
   <div>
     <img alt="Vue logo" :src="productLogo" />
     <div>{{ product }}</div>
+    <div v-if="inventory > 10">Available</div>
+    <div v-else-if="inventory > 0 && inventory <= 10">
+      Almost Sold Out, {{ inventory }} left!
+    </div>
+    <div v-else>Out of Stock</div>
   </div>
 </template>
 
@@ -14,6 +19,7 @@ export default {
     return {
       product: "Socks",
       productLogo: Image,
+      inventory: 0,
     };
   },
 };
