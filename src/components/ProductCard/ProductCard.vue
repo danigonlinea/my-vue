@@ -14,6 +14,11 @@
           {{ detail }}
         </li>
       </ul>
+
+      <div class="add-to-cart-section">
+        <button class="add-item-btn" @click="addToCart">Add</button>
+        <span>Added: {{ numberItemsAddedToCart }}</span>
+      </div>
     </div>
   </div>
 </template>
@@ -29,12 +34,28 @@ export default {
       productLogo: Image,
       inventory: 0,
       details: ["80% cotton", "20% polyester", "Gender-neutral"],
+      numberItemsAddedToCart: 0,
     };
+  },
+  methods: {
+    addToCart() {
+      return this.numberItemsAddedToCart++;
+    },
   },
 };
 </script>
 
 <style lang="scss">
+:root {
+  --background-color: #ffe5e5;
+  --color: #000000;
+  --feedback-bg-color: #ffffff;
+  --feedback-secondary-color: #ffacac;
+  --feedback-primary-color: #53488d;
+  --feedback-icon-color: #ffffff;
+  --feedback-form-input: #f4f4f4;
+}
+
 .product-card {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -51,6 +72,26 @@ export default {
 
   .product-aspects {
     list-style-type: none;
+  }
+
+  .add-to-cart-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .add-item-btn {
+      padding: 0.2em 1em;
+      cursor: pointer;
+
+      border: none;
+      background-color: var(--feedback-secondary-color);
+      color: var(--feedback-primary-color);
+      transition: all 0.3s;
+
+      &:hover {
+        background-color: var(--background-color);
+      }
+    }
   }
 }
 </style>
