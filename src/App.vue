@@ -1,12 +1,21 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
+    <img alt="Vue logo" :src="productLogo" />
+    <div>{{ product }}</div>
   </div>
 </template>
 
 <script>
+import Image from "./assets/logo.png";
+
 export default {
   name: "App",
+  data: () => {
+    return {
+      product: "Socks",
+      productLogo: Image,
+    };
+  },
 };
 </script>
 
