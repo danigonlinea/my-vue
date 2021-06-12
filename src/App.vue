@@ -1,20 +1,16 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" :src="productLogo" />
-    <div>{{ product }}</div>
+    <ProductCard></ProductCard>
   </div>
 </template>
 
 <script>
-import Image from "./assets/logo.png";
+import ProductCard from "@/components/ProductCard";
 
 export default {
   name: "App",
-  data: () => {
-    return {
-      product: "Socks",
-      productLogo: Image,
-    };
+  components: {
+    ProductCard,
   },
 };
 </script>
