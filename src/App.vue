@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <ProductCard></ProductCard>
+    <div>
+      <ProductCard></ProductCard>
+    </div>
   </div>
 </template>
 
@@ -15,13 +17,18 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+
+  > div {
+    max-width: 920px;
+    display: flex;
+    justify-content: center;
+  }
 }
 </style>
